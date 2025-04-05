@@ -7,8 +7,8 @@ from langgraph.prebuilt import create_react_agent
 
 # Create the agent
 memory = MemorySaver()
-model = ChatAnthropic(model_name="claude-3-7-sonnet-20250219", anthropic_api_key="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")
-search = TavilySearchResults(max_results=2, tavily_api_key="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")
+model = ChatAnthropic(model_name="claude-3-7-sonnet-20250219", anthropic_api_key="{vars.ANTHROPIC_APIKEY}")
+search = TavilySearchResults(max_results=2, tavily_api_key="{vars.TAVILY_APIKEY}")
 tools = [search]
 agent_executor = create_react_agent(model, tools, checkpointer=memory)
 
